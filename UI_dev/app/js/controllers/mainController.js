@@ -58,8 +58,8 @@
 
     // Assemble a plot URL from user settings
     function assembleUrl() {
-      // e.g. https://test-c1.airfire.org/monitor-custom/v4/uptime?serverid=tools-c3
-      var url = vm.data.plotService + "?serverid=" + vm.data.serverid;
+      // e.g. https://test-c1.airfire.org/monitor-custom/v1/uptime?serverid=tools-c3
+      var url = vm.data.plotService + "?serverid=" + vm.data.serverid + "&lookbackdays=" + vm.data.lookBackDays;
       return(url);
     }
 
