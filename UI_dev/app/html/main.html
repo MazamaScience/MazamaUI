@@ -7,16 +7,48 @@
 <div class="container border shadow" ng-controller="MainCtrl as MainCtrl" ng-cloak>
   <!-- BEGIN Grey box -->
   <div>
-    <div class="row grey">      
-      <div class="col-sm-2">
-        <p>Choose a server ID:</p> 
-        <select ng-model="MainCtrl.data.serverid" ng-options="serverid for serverid in MainCtrl.data.serverids"></select>
-        <br>
-        <p>Number of days to look back:</p>
-        <input type="number" ng-model="MainCtrl.data.lookBackDays">
-      </div>
-      <div class="col-sm-10">
-        <img class="img-fluid margin-sm border" ng-src="{{MainCtrl.assembleUrl()}}"/>
+    <div class="row grey">     
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-md-5">
+
+            <div class="form-group">
+              <legend>Server ID</legend>
+              <div class="d-flex flex-row justify-content-around">
+                  <label class="form-check-label" ng-repeat="id in MainCtrl.data.serverids">
+                    <input type="radio" ng-model="MainCtrl.data.serverid" name="server-id" value="{{ id }}">
+                    {{ id }}
+                  </label>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-7">
+
+            <div class="form-group">
+              <legend>Plot options</legend>
+              <div class="d-flex flex-row justify-content-around">
+                <label>
+                  Look back days: 
+                  <input type="number" name="lookbackdays" ng-model="MainCtrl.data.lookBackDays" min="2" max="20">
+                </label>
+
+                <label>
+                  Y maximum: 
+                  <input type="number" name="ymax" min="0.1" ng-model="MainCtrl.data.yMax">
+                </label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- The plot -->
+        <div class="row">
+          <div class="col-sm-12">
+            <img class="img-fluid border" style="width: 100%" ng-src="{{ MainCtrl.assembleUrl() }}"/>
+          </div>
+        </div>
       </div>
     </div>
 

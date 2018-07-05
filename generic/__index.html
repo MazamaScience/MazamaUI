@@ -1,55 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="en" ng-app="App">
+  <head>
+    <!-- NOTE:  Anything wrapped in "__" is replaced during Makefile installation. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="__SERVICE_PATH__/">
 
-<head>
+    <title>Generic v0.0</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-  <!-- NOTE:  Anything wrapped in "__" is replaced during Makefile installation. -->
+    <!-- this hides ugliness before the page loads -->
+    <style type="text/css">
+      [ng\:cloak], [ng-cloak], .ng-cloak {  display: none !important; }
+    </style>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <base href="__SERVICE_PATH__/">
+    <!-- load Source Sans from google fonts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic,600italic">
+    <link rel="stylesheet" href="dist/dependencies.css">
+    <link rel="stylesheet" href="dist/dist.css">
+  </head>
 
-  <title>Generic v0.0</title>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
-  <!-- this hides ugliness before the page loads -->
-  <style type="text/css">
-    [ng\:cloak], [ng-cloak], .ng-cloak {  display: none !important; }
-  </style>
-
-  <!-- load Source Sans from google fonts -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic,600italic">
-  <link rel="stylesheet" href="dist/dependencies.css">
-  <link rel="stylesheet" href="dist/dist.css">
-
-</head>
-
-<body>
-
-  <!-- header: this is always shown even if the view changes -->
-
-  <header class="navbar navbar-default margin-md">
-    <div class="container">
-      <div class="navbar-header">        
-        <h3>
-          <img class="logo" src="..."/>
-          <a class="navbar-brand" ui-sref="index" ui-sref-opts="{reload: true}">Generic-v0.0</a>
-        </h3>
+  <body>
+    <!-- header: this is always shown even if the view changes -->
+    <header class="navbar navbar-default margin-md shadow">
+      <div class="container">
+        <div class="navbar-header">        
+          <h3>
+            <img class="logo" src="..."/>
+            <a class="navbar-brand" ui-sref="index" ui-sref-opts="{reload: true}">Generic-v0.0</a>
+          </h3>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- the view: templates will be loaded here -->
-  <ui-view ng-cloak></ui-view>
+    <!-- the view: templates will be loaded here -->
+    <ui-view ng-cloak></ui-view>
 
-  <!-- scripts -->
+    <!-- scripts -->
 
-  <script src="dist/dependencies.min.js"></script> <!-- concatenated dependencies -->
-  <script src="dist/dist.js"></script> <!-- app build --> 
+    <script src="dist/dependencies.min.js"></script> <!-- concatenated dependencies -->
+    <script src="dist/dist.js"></script> <!-- app build --> 
 
-</body>
+  </body>
 </html>
-
