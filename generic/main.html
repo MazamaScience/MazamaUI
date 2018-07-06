@@ -31,27 +31,18 @@
 
                 <div class="col-xs-2">
                   <label>
-                    Y maximum: 
-                    <input type="number" name="ymax" min="0.1" max="1000" ng-model="MainCtrl.data.yMax">
+                    Y max: 
+                    <input type="number" name="ymax" min="0" ng-model="MainCtrl.data.yMax" style="width: 100%">
                   </label>
                 </div>
 
-                <div class="col-xs-1">
-                </div>
+                <div class="col-xs-1"></div>
 
                 <div class="col-xs-9">
-                  <label>Look back days:</label>
-                  <rzslider rz-slider-model="MainCtrl.data.lookBackDays" rz-slider-options="MainCtrl.slider.options" class="custom-slider"></rzslider>
+                  <label>Look back days: {{ MainCtrl.startDate.toDateString().substring(4) }} - {{ MainCtrl.currentDate.toDateString().substring(4) }}</label>
+                  <rzslider rz-slider-model="MainCtrl.data.lookBackDays" rz-slider-options="MainCtrl.slider.options" class="custom-slider" ng-change="MainCtrl.dateFunc()"></rzslider>
                 </div>
 
-
-                
-                  <!-- <input type="number" name="lookbackdays" ng-model="MainCtrl.data.lookBackDays" min="2" max="20"> -->
-                
-
-                
-
-                
               </div>
             </div>
 

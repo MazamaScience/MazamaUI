@@ -38,6 +38,9 @@
 
     vm.openUrl = openUrl;
     vm.assembleUrl = assembleUrl;
+    vm.dateFunc = dateFunc;
+    vm.currentDate = new Date();
+    vm.startDate = new Date(new Date().getTime() - (vm.data.lookBackDays * 24 * 60 * 60 * 1000));
 
     vm.slider = {
       value: 7,
@@ -46,7 +49,9 @@
         ceil: 21,
         step: 1,
         minLimit: 2,
-        maxLimit: 21
+        maxLimit: 21,
+        onChange: vm.dateFunc,
+        rightToLeft: true
       }
     };
 
@@ -72,6 +77,11 @@
       // e.g. https://test-c1.airfire.org/monitor-custom/v1/uptime?serverid=tools-c3
       var url = vm.data.plotService + "?serverid=" + vm.data.serverid + "&lookbackdays=" + vm.data.lookBackDays + "&ymax=" + vm.data.yMax;
       return(url);
+    }
+
+    function dateFunc() {
+      var now = new Date();
+      vm.startDate = new Date(new Date().getTime() - (vm.data.lookBackDays * 24 * 60 * 60 * 1000));
     }
 
   }

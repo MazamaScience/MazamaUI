@@ -22,3 +22,7 @@ legend {
   height: 32px;
   background-color: #333;
 }
+
+.custom-slider.rzslider .rz-pointer:after {
+  display: none;
+}
