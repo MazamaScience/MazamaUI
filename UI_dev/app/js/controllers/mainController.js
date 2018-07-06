@@ -39,6 +39,17 @@
     vm.openUrl = openUrl;
     vm.assembleUrl = assembleUrl;
 
+    vm.slider = {
+      value: 7,
+      options: {
+        floor: 2,
+        ceil: 21,
+        step: 1,
+        minLimit: 2,
+        maxLimit: 21
+      }
+    };
+
     //     END MainCtrl definition     ----------------------------------------
     // ------------------------------------------------------------------------
 

@@ -28,15 +28,30 @@
             <div class="form-group">
               <legend>Plot options</legend>
               <div class="d-flex flex-row justify-content-around">
-                <label>
-                  Look back days: 
-                  <input type="number" name="lookbackdays" ng-model="MainCtrl.data.lookBackDays" min="2" max="20">
-                </label>
 
-                <label>
-                  Y maximum: 
-                  <input type="number" name="ymax" min="0.1" ng-model="MainCtrl.data.yMax">
-                </label>
+                <div class="col-xs-2">
+                  <label>
+                    Y maximum: 
+                    <input type="number" name="ymax" min="0.1" max="1000" ng-model="MainCtrl.data.yMax">
+                  </label>
+                </div>
+
+                <div class="col-xs-1">
+                </div>
+
+                <div class="col-xs-9">
+                  <label>Look back days:</label>
+                  <rzslider rz-slider-model="MainCtrl.data.lookBackDays" rz-slider-options="MainCtrl.slider.options" class="custom-slider"></rzslider>
+                </div>
+
+
+                
+                  <!-- <input type="number" name="lookbackdays" ng-model="MainCtrl.data.lookBackDays" min="2" max="20"> -->
+                
+
+                
+
+                
               </div>
             </div>
 

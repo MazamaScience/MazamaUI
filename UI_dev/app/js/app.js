@@ -16,7 +16,7 @@
 
   // Define our application, 'App', and list module dependencies (all found in dependencies.js)
   angular
-    .module('App', ['ui.router', 'ui.bootstrap'])
+    .module('App', ['ui.router', 'ui.bootstrap', 'rzModule'])
     .config(configure)
     .filter('unsafe', function($sce) {
       // This allows for injecting unescaped html (which can be dangerous!) using the 'unsafe' filter

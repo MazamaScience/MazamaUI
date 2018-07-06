@@ -16,7 +16,7 @@
 
   // Define our application, 'App', and list module dependencies (all found in dependencies.js)
   angular
-    .module('App', ['ui.router', 'ui.bootstrap'])
+    .module('App', ['ui.router', 'ui.bootstrap', 'rzModule'])
     .config(configure)
     .filter('unsafe', function($sce) {
       // This allows for injecting unescaped html (which can be dangerous!) using the 'unsafe' filter
@@ -88,6 +88,17 @@
 
     vm.openUrl = openUrl;
     vm.assembleUrl = assembleUrl;
+
+    vm.slider = {
+      value: 7,
+      options: {
+        floor: 2,
+        ceil: 21,
+        step: 1,
+        minLimit: 2,
+        maxLimit: 21
+      }
+    };
 
     //     END MainCtrl definition     ----------------------------------------
     // ------------------------------------------------------------------------

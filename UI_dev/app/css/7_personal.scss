@@ -8,3 +8,17 @@ legend {
 	margin-bottom: 5px;	
 	border: none;
 }
+
+.custom-slider.rzslider .rz-bar {
+  background: #AAA;
+  height: 3px;
+}
+.custom-slider.rzslider .rz-selection {
+  background: orange;
+}
+
+.custom-slider.rzslider .rz-pointer {
+  width: 32px;
+  height: 32px;
+  background-color: #333;
+}
