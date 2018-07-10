@@ -14,15 +14,36 @@ legend {
   height: 3px;
 }
 .custom-slider.rzslider .rz-selection {
-  background: orange;
+  background: #96DAF6;
 }
 
 .custom-slider.rzslider .rz-pointer {
-  width: 32px;
-  height: 32px;
-  background-color: #333;
+  left: -10;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #96DAF6;
+}
+
+.rz-pointer:focus {
+  outline: none;
 }
 
 .custom-slider.rzslider .rz-pointer:after {
   display: none;
+}
+
+header {
+  background-color: #666;
+  margin-bottom: 20px;
+  
+}
+
+a {
+  color: #96DAF6;
+  font-size: 28px;
+}
+
+.rz-pointer {
+  box-shadow: 0px 0px 5px 1px #888888;
 }

@@ -36,10 +36,10 @@
 
     // method definitions -----------------------------------------------------
 
-    vm.openUrl = openUrl;
     vm.assembleUrl = assembleUrl;
-    vm.dateFunc = dateFunc;
     vm.currentDate = new Date();
+    vm.dateFunc = dateFunc;
+    vm.openUrl = openUrl;
     vm.startDate = new Date(new Date().getTime() - (vm.data.lookBackDays * 24 * 60 * 60 * 1000));
 
     vm.slider = {
@@ -51,7 +51,11 @@
         minLimit: 2,
         maxLimit: 21,
         onChange: vm.dateFunc,
-        rightToLeft: true
+        showSelectionBar: true,
+        rightToLeft: true,
+        translate: function(value) {
+          return value + " days";
+        }
       }
     };
 
@@ -80,7 +84,6 @@
     }
 
     function dateFunc() {
-      var now = new Date();
       vm.startDate = new Date(new Date().getTime() - (vm.data.lookBackDays * 24 * 60 * 60 * 1000));
     }
 

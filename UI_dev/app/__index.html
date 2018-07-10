@@ -12,13 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-
-
-
-    
     <link rel="stylesheet" type="text/css" href="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.css">
-
-
 
     <!-- this hides ugliness before the page loads -->
     <style type="text/css">
@@ -34,14 +28,12 @@
 
   <body>
     <!-- header: this is always shown even if the view changes -->
-    <header class="navbar navbar-default margin-md shadow">
-      <div class="container">
-        <div class="navbar-header">        
-          <h3>
-            <img class="logo" src="..."/>
-            <a class="navbar-brand" ui-sref="index" ui-sref-opts="{reload: true}">Generic-v0.0</a>
-          </h3>
-        </div>
+    <header class="d-flex flex-row-reverse align-items-end shadow rounded">
+      <div>
+        <img class="logo" src="images/MS-IconOnly.png" width="80px">
+      </div>
+      <div>
+        <a ui-sref="index" ui-sref-opts="{reload: true}">Generic v0.0</a>
       </div>
     </header>
 
@@ -49,7 +41,6 @@
     <ui-view ng-cloak></ui-view>
 
     <!-- scripts -->
-
     <script src="dist/dependencies.min.js"></script> <!-- concatenated dependencies -->
     <script src="dist/dist.js"></script> <!-- app build --> 
 

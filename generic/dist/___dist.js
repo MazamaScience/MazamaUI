@@ -86,10 +86,10 @@
 
     // method definitions -----------------------------------------------------
 
-    vm.openUrl = openUrl;
     vm.assembleUrl = assembleUrl;
-    vm.dateFunc = dateFunc;
     vm.currentDate = new Date();
+    vm.dateFunc = dateFunc;
+    vm.openUrl = openUrl;
     vm.startDate = new Date(new Date().getTime() - (vm.data.lookBackDays * 24 * 60 * 60 * 1000));
 
     vm.slider = {
@@ -101,7 +101,11 @@
         minLimit: 2,
         maxLimit: 21,
         onChange: vm.dateFunc,
-        rightToLeft: true
+        showSelectionBar: true,
+        rightToLeft: true,
+        translate: function(value) {
+          return value + " days";
+        }
       }
     };
 
@@ -130,7 +134,6 @@
     }
 
     function dateFunc() {
-      var now = new Date();
       vm.startDate = new Date(new Date().getTime() - (vm.data.lookBackDays * 24 * 60 * 60 * 1000));
     }
 
@@ -197,7 +200,13 @@
     Factory.serverids = ['tools-c2','tools-c3','tools-c4'];
     Factory.serverid = 'tools-c2';
     Factory.lookBackDays = 7;
-    Factory.yMax = 1;
+    Factory.yMaxs = [{label: "Auto",  value: 0},
+                     {label: "1",     value: 1},
+                     {label: "2",     value: 2},
+                     {label: "5",     value: 5},
+                     {label: "10",    value: 10},
+                     {label: "50",    value: 50}];
+    Factory.yMax = 0;
 
     return Factory;
 

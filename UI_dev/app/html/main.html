@@ -10,8 +10,8 @@
     <div class="row grey">     
       <div class="col-sm-12">
         <div class="row">
-          <div class="col-md-5">
 
+          <div class="col-md-5">
             <div class="form-group">
               <legend>Server ID</legend>
               <div class="d-flex flex-row justify-content-around">
@@ -21,31 +21,28 @@
                   </label>
               </div>
             </div>
-
           </div>
-          <div class="col-md-7">
 
+          <div class="col-md-7">
             <div class="form-group">
               <legend>Plot options</legend>
               <div class="d-flex flex-row justify-content-around">
 
                 <div class="col-xs-2">
                   <label>
-                    Y max: 
-                    <input type="number" name="ymax" min="0" ng-model="MainCtrl.data.yMax" style="width: 100%">
+                    Y max:
+                    <br>
+                    <select ng-model="MainCtrl.data.yMax" ng-options="yMax.value as yMax.label for yMax in MainCtrl.data.yMaxs"></select>
                   </label>
                 </div>
 
-                <div class="col-xs-1"></div>
-
-                <div class="col-xs-9">
+                <div class="col-xs-10">
                   <label>Look back days: {{ MainCtrl.startDate.toDateString().substring(4) }} - {{ MainCtrl.currentDate.toDateString().substring(4) }}</label>
                   <rzslider rz-slider-model="MainCtrl.data.lookBackDays" rz-slider-options="MainCtrl.slider.options" class="custom-slider" ng-change="MainCtrl.dateFunc()"></rzslider>
                 </div>
 
               </div>
             </div>
-
           </div>
         </div>
 
