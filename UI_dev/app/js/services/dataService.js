@@ -24,7 +24,7 @@
     
     // Data service state variables
     Factory.plotService = 'https://test-c1.airfire.org/monitor-custom/v1/uptime';
-    Factory.serverids = ['tools-c2','tools-c3','tools-c4','mazama'];
+    Factory.serverids = ['tools-c2','tools-c3','tools-c4'];
     Factory.serverid = 'tools-c2';
     Factory.lookBackDays = 7;
     Factory.yMaxs = [{label: "Auto",  value: 0},
