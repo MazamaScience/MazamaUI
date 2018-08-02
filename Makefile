@@ -4,7 +4,7 @@
 
 # Configurable parameters
 OSX_WEBSERVER_ROOT=/Library/WebServer/Documents
-MAZAMA_WEBSERVER_ROOT=/var/www/mazamascience.com/html
+MAZAMA_WEBSERVER_ROOT=/var/www/tools.mazamascience.com/html
 
 SERVICE_PATH=server-health
 
@@ -22,7 +22,7 @@ configure_ui:
 		generic/dist/__dist.min.js > generic/dist/___dist.min.js
 
 
-mazama_deploy: gulp configure_ui
+mazama_deploy: configure_ui
 	-mkdir $(MAZAMA_WEBSERVER_ROOT)/$(SERVICE_PATH)/
 	cp -r generic/* $(MAZAMA_WEBSERVER_ROOT)/$(SERVICE_PATH)/
 
