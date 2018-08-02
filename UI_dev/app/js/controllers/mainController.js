@@ -28,9 +28,6 @@
     // view model
     var vm = this;
 
-    // browser
-    vm.isChrome = $window.navigator.vendor.indexOf("Google") == 0 && $window.navigator.userAgent.indexOf("Chrome") >= 0;
-
     // All UI state information is contained in the DataService
     vm.data = DataService;
 
@@ -63,9 +60,8 @@
     // ------------------------------------------------------------------------
 
     // Initialization
-    if ( !vm.isChrome ) {
-      alert('This interface has been tested on the Chrome browser but may not provide full functionality on other browsers.');
-    }
+    // 
+    // nothing to do
 
     // ------------------------------------------------------------------------
     //     BEGIN method definitions     ---------------------------------------

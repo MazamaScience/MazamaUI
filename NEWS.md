@@ -10,6 +10,10 @@ images.
 
 ## Version 0.1 -- Server Health
 
+### MazamaUI 0.1.1
+
+ * removed alert for non-Chrome
+
 ### MazamaUI 0.1.0
 
  * Tate Brasel's Server Health UI

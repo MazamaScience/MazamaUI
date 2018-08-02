@@ -8,7 +8,7 @@ MAZAMA_WEBSERVER_ROOT=/var/www/mazamascience.com/html
 
 SERVICE_PATH=server-health
 
-VERSION=0.1
+VERSION=0.1.1
 
 gulp:
 	cd UI_dev; gulp

@@ -78,9 +78,6 @@
     // view model
     var vm = this;
 
-    // browser
-    vm.isChrome = $window.navigator.vendor.indexOf("Google") == 0 && $window.navigator.userAgent.indexOf("Chrome") >= 0;
-
     // All UI state information is contained in the DataService
     vm.data = DataService;
 
@@ -113,9 +110,8 @@
     // ------------------------------------------------------------------------
 
     // Initialization
-    if ( !vm.isChrome ) {
-      alert('This interface has been tested on the Chrome browser but may not provide full functionality on other browsers.');
-    }
+    // 
+    // nothing to do
 
     // ------------------------------------------------------------------------
     //     BEGIN method definitions     ---------------------------------------
@@ -141,6 +137,36 @@
 
 })();
 
+/* ==============================================================================
+ * directives/popup.js -- Full page popup that fades out when clicked.
+ *
+ * Relies on CSS rules from app/css/5_components.scss
+ */
+
+(function() {
+  'use strict';
+
+  angular.module('App')
+  	.directive('popup', popup);
+
+  function popup() {
+
+    var directive = {
+      restrict: 'E',		// Is an element <popup> </popup>
+      transclude: true,	// Allows HTML content inside
+      scope: {
+        visible: '='		// Binds it to some boolean attribute, will show when true
+        					      // Because this is binded with "=" when the popup is clicked
+        					      // The external variable this is bound to will change to false
+      },
+      template: '<div class="popup-wrapper" ng-click="visible=false" ng-class="{visible: visible}"><div class="row popup" ng-transclude></div></div>'
+    };
+
+    return directive;
+
+  }
+
+})();
 /* ============================================================================
  * services/dataService.js -- Service containing state data.
  *
@@ -182,37 +208,6 @@
 
     //     END DataService definition     -------------------------------------
     // ------------------------------------------------------------------------
-
-  }
-
-})();
-
-/* ==============================================================================
- * directives/popup.js -- Full page popup that fades out when clicked.
- *
- * Relies on CSS rules from app/css/5_components.scss
- */
-
-(function() {
-  'use strict';
-
-  angular.module('App')
-  	.directive('popup', popup);
-
-  function popup() {
-
-    var directive = {
-      restrict: 'E',		// Is an element <popup> </popup>
-      transclude: true,	// Allows HTML content inside
-      scope: {
-        visible: '='		// Binds it to some boolean attribute, will show when true
-        					      // Because this is binded with "=" when the popup is clicked
-        					      // The external variable this is bound to will change to false
-      },
-      template: '<div class="popup-wrapper" ng-click="visible=false" ng-class="{visible: visible}"><div class="row popup" ng-transclude></div></div>'
-    };
-
-    return directive;
 
   }
 
