@@ -4,7 +4,7 @@
 
 # Configurable parameters
 OSX_WEBSERVER_ROOT=/Library/WebServer/Documents
-MAZAMA_WEBSERVER_ROOT=/var/www/mazamascience.com/html
+MAZAMA_WEBSERVER_ROOT=/var/www/tools.mazamascience.com/html
 
 SERVICE_PATH=server-health
 
