@@ -10,6 +10,10 @@ images.
 
 ## Version 0.1 -- Server Health
 
+### MazamaUI 0.1.2
+
+ * added tools-c5
+
 ### MazamaUI 0.1.1
 
  * removed alert for non-Chrome
